@@ -1,6 +1,9 @@
 <template>
     <div v-for="todo in todoList" :key="todo.id">
-        <div class="">{{ todo.item }}</div>
+        <div class="">
+            <span :class="{ completed: todo.completed }">{{ todo.item }}</span>
+            <span @click.stop="toggleComplete(todo.id)">&#10004;</span>
+        </div>
     </div>
 </template>
 
@@ -11,6 +14,12 @@ import { storeToRefs } from "pinia";
 const store = useTodoListStore()
 
 const { todoList } = storeToRefs(store)
+
+const { toggleComplete } = store
 </script>
 
-<style scoped></style>
+<style scoped>
+.completed {
+    text-decoration: line-through;
+}
+</style>

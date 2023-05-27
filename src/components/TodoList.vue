@@ -17,7 +17,7 @@ const { todoList } = storeToRefs(store)
 const { toggleComplete, deleteTodo } = store
 
 function deleteItem(id: number) {
-    if (!confirm('Are yous sure delete this task?')) return
+    if (!confirm('Are you sure to delete this task?')) return
     deleteTodo(id)
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="addItemAndCLear(todo)">
-        <input v-model="todo" type="text"> <button>Add</button>
+        <input v-model="todo" type="text"> <button class="button">Add</button>
     </form>
 </template>
 
@@ -17,4 +17,16 @@ function addItemAndCLear(item: string) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded */
+.button {
+    background-color: #4299e1;
+    color: white;
+    padding: 0.25rem 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.button:hover {
+    background-color: #2b6cb0;
+}
+</style>

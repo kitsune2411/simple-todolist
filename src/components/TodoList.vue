@@ -1,10 +1,14 @@
 <template>
-    <div v-for="todo in todoList" :key="todo.id">
-        <div class="">
-            <span :class="{ completed: todo.completed }">{{ todo.item }}</span>
-            <span @click.stop="toggleComplete(todo.id)">&#10004;</span>
-            <span @click.stop="deleteItem(todo.id)">&#10060;</span>
-        </div>
+    <div v-for="todo in todoList" :key="todo.id" style="margin-top: 1rem;">
+        <table>
+            <tbody>
+                <tr>
+                    <td style="width: 11rem;"><span :class="{ completed: todo.completed }">{{ todo.item }}</span></td>
+                    <td style="width: 1.5rem;"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
+                    <td style="width: 1.5rem;"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 

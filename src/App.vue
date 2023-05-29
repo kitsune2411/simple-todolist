@@ -5,14 +5,21 @@ import TodoList from './components/TodoList.vue';
 
 <template>
   <main>
-    <TodoForm />
-    <TodoList />
+    <div class="form">
+      <TodoForm />
+      <TodoList />
+    </div>
   </main>
 </template>
 
 <style scoped>
 main {
   height: 100vh;
+
+}
+
+.form {
+  margin-top: 5rem;
   display: grid;
   justify-content: center;
   align-content: center;

@@ -4,8 +4,8 @@
             <tbody>
                 <tr>
                     <td style="width: 11rem;"><span :class="{ completed: todo.completed }">{{ todo.item }}</span></td>
-                    <td style="width: 1.5rem;"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
-                    <td style="width: 1.5rem;"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
+                    <td class="button"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
+                    <td class="button"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
                 </tr>
             </tbody>
         </table>
@@ -29,5 +29,10 @@ function deleteItem(id: number) {
 <style scoped>
 .completed {
     text-decoration: line-through;
+}
+
+.button {
+    width: 1.5rem;
+    cursor: pointer;
 }
 </style>

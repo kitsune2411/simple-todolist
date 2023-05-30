@@ -1,8 +1,9 @@
 <template>
-    <div v-for="todo in todoList" :key="todo.id" style="margin-top: 1rem;">
+    <div v-for="(todo, i) in todoList" :key="todo.id" style="margin-top: 1rem;">
         <table>
             <tbody>
                 <tr>
+                    <td style="width: auto;">{{ `${i + 1} . ` }}</td>
                     <td style="width: 11rem;"><span :class="{ completed: todo.completed }">{{ todo.item }}</span></td>
                     <td class="button"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
                     <td class="button"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
@@ -29,6 +30,8 @@ function deleteItem(id: number) {
 <style scoped>
 .completed {
     text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-style: italic;
 }
 
 .button {

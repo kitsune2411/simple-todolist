@@ -14,12 +14,13 @@ import TodoList from './components/TodoList.vue';
 
 <style scoped>
 main {
-  height: 100vh;
-
+  height: 75vh;
+  padding-top: 10rem;
 }
 
 .form {
-  margin-top: 5rem;
+  /* width: 100%; */
+  /* margin-top: 5rem; */
   display: grid;
   justify-content: center;
   align-content: center;

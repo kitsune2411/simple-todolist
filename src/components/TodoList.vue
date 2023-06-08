@@ -5,8 +5,8 @@
                 <tr>
                     <td style="width: auto;">{{ `${i + 1} . ` }}</td>
                     <td style="width: 11rem;"><span :class="{ completed: todo.completed }">{{ todo.item }}</span></td>
-                    <td class="button"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
-                    <td class="button"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
+                    <td class="button no-print"><span @click.stop="toggleComplete(todo.id)">&#10004;</span></td>
+                    <td class="button no-print"><span @click.stop="deleteItem(todo.id)">&#10060;</span></td>
                 </tr>
             </tbody>
         </table>
@@ -37,5 +37,11 @@ function deleteItem(id: number) {
 .button {
     width: 1.5rem;
     cursor: pointer;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
 }
 </style>
